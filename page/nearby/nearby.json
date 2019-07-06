@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "附近",
+  "usingComponents": {
+    "line-list": "/components/lineList/lineList"
+  }
+}

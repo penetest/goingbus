@@ -1,0 +1,78 @@
+/* page/line/arriveAlarm/arrivealarm.wxss */
+page {
+  background: #ffffff;
+}
+.line-header {
+    position: fixed;
+    width: 100%;
+}
+.line-title{
+    position: relative;
+    height:90px;
+    padding-left:16px;
+    overflow: hidden;
+}
+.line-stop-area {
+    font-size: 14px;
+    width:320px;
+    color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+   
+}
+.line-name {
+    float:left;
+    margin-right:10px;
+    font-weight: bold;
+}
+.line-stopname{
+    font-weight: bold;
+}
+.line-from,
+.line-to{
+    margin-top: 0px;
+    float:left;
+}
+.line-name-area view{
+    display: inline;
+}
+.line-name-area {
+    font-size: 12px;
+    margin-top:8px;
+    color: #666666;
+}
+
+.line-time-area{
+    position: relative;
+    top:90px;
+    padding-left:16px;
+    overflow: hidden;
+}
+
+.section{
+    border-bottom:0px;
+    padding: 0px;
+}
+.section__title{
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.section__content view{
+   display: inline;
+}
+
+picker{
+  padding: 10px 0px;
+}
+
+.label-name{
+  padding-right: 10px;
+}
+
+.picker{
+    padding: 13px;
+}

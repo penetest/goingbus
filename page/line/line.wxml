@@ -1,0 +1,111 @@
+<view class='container'>
+  <view class="line-header">
+      <view class="line-title">
+          <view class="line-name-area">
+              <text class="line-name">
+                  {{lineData.name}}
+              </text>
+              <text class="line-from">
+                  {{lineData.starting_station}} -> 
+              </text>
+            
+              <text class="line-to">
+                  {{lineData.terminal_station}}
+              </text>
+          </view>
+
+          <view>
+              <image class='icon-switch' src='/imgs/index/switch.png' bindtap="ballClickEvent" data-no='{{lineData.pair_id}}'></image>
+          </view>
+
+          <view class="line-time-area">
+              <view  class="line-start">首班</view>
+              <view  class="line-start-time">{{lineData.first_time}}</view>
+              <view  class="line-end">末班</view>
+              <view class="line-end-time">{{lineData.last_time}}</view>
+          </view>
+          <view class='line-tips-area'>{{firstComeTips}}</view>
+      </view>
+  </view>
+  <view class="via-stop-list" >
+  <scroll-view scroll-y="true" >
+    <view wx:for="{{lineData.via_stops}}" wx:key="{{ index }}" wx:for-item="via_stop" class="via-stop-list-item">
+    <view class='flex-row' style='display: flex '>
+        <view class=' flex-view-item' style='padding-right: 10px;'>
+          <!-- <view wx:if="{{via_stop.run_status === 1 }}" class="via-stop-sug-icon">
+              <image class="sug-line-icon" src='/imgs/index/search_bus.png'></image>
+            </view> -->
+          <view class="flex-row" style="display: block;">
+            <view  wx:if="{{ buss[index+1]}}" class="flex-view-item">
+              <image class="sug-line-icon" src='/imgs/index/search_buss.png'></image>
+              <!-- <view wx:for="{{buss}}" wx:for-item="{{ bussindex }}">
+                <view wx:if="{{index == bussindex}}">
+                 <image class="sug-line-icon" src='/imgs/index/search_bus.png'></image>
+                </view>
+              </view> -->
+            </view>
+            <view  wx:else class="flex-view-item">
+              <view class="sug-line-icon"></view>
+            </view>
+            <view  wx:if="{{ busc[index+1] && index != 0}}" class="via-stop-line-inner-bus flex-view-item"> 
+              <image class="sug-line-icon" src='/imgs/index/search_busc.png'></image>
+              <!-- <view wx:for="{{busc}}" wx:for-item="{{ buscindex }}">
+                <view  wx:if="{{index == buscindex}}">
+                 <image class="sug-line-icon" src='/imgs/index/search_bus.png'></image>
+                </view>
+              </view> -->
+            </view>
+             <view  wx:else class="via-stop-line-inner-bus flex-view-item"> 
+                <view class="sug-line-icon"></view>
+             </view>
+          </view>
+        </view>
+          
+        <view class=' flex-view-item'>
+          <!-- <view wx:if="{{via_stop.run_status === 1 }}" class="via-stop-sug-icon">
+              <image class="sug-line-icon" src='/imgs/index/search_bus.png'></image>
+            </view> -->
+          <view class="flex-row" style="display: block;">
+            <view class="flex-view-item" bindtap="ClickStop" data-no='{{index}}' >
+              <image class="{{currentId==index?'via-stop-point-line-icon-click':'via-stop-point-line-icon'}}" src="{{currentId==index?'/imgs/index/stop.png':'/imgs/index/quan.png'}}"></image>
+            </view>
+            <view  wx:if="{{index != 0 }}" class="via-stop-line-inner flex-view-item"> <image class='via-stop-line-icon'  src='/imgs/index/line.png' ></image>
+            </view>
+          </view> 
+        </view>
+        
+        <view class="{{currentId==index?'via-stop-list-item-inner-click':'via-stop-list-item-inner'}} flex-view-item" bindtap="ClickStop" data-no='{{index}}'>
+            <view class="via-stop-sug-text">
+              <view class="via-stop-name">{{via_stop.name}}</view>
+              <view class="via-stop-tranname" wx:for="{{via_stop.metros}}" wx:key="{{index}}">
+                  <view style="background-color:{{metro.line_color}};">{{metro.line_name}}</view> 
+              </view>
+            </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  </view>
+  <view class="line_bottom">
+    <!-- <view class="line_bottom-tabbar-item" bind:tap="goBus"> 
+      <view class="icon iconfont icon-bus"></view>
+      <view class="text">上车了</view>
+    </view> -->
+    <view class="line_bottom-tabbar-item" bind:tap="sameStopLine">
+      <view class='icon iconfont icon-samebusline' ></view>
+      <view class="text">同站路线</view>
+    </view>
+    <view class="line_bottom-tabbar-item {{isCollected ? 'collected' : ''}}" bind:tap="collectLine">
+      <view class="icon iconfont icon-collection"></view>
+      <view class="text">收藏</view>
+    </view>
+    <view class="line_bottom-tabbar-item {{isSetAlarm ? 'setalarm' : ''}}" bind:tap="arriveStop">
+      <view class='icon iconfont icon-alarm' ></view>
+      <view class="text">到站提醒</view>
+    </view>
+     <view class="line_bottom-tabbar-item" bind:tap="linemap">
+      <view class='icon iconfont icon-maps' ></view>
+      <view class="text">路线地图</view>
+    </view>
+  </view>
+</view>

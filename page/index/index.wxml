@@ -1,0 +1,67 @@
+<!-- <view class="container"> -->
+	<view class="header scrolled ">
+		<view class="location " bindtap="toNearby">
+			<image class="icon" src="/imgs/index/icon_location.png"/>
+			{{address}}
+		</view>
+		<view class="search" bindtap="tapSearch">
+			<image class="icon" src="/imgs/index/icon_search.png"/>
+		</view>
+	</view>
+  <view class='recently-container'>
+		<block wx:if="{{recentlyList.length}}" >
+      <view class="recently">
+        <view class="item" wx:for="{{recentlyList}}" wx:key="{{index}}" wx:if="{{!item.isStation}}">
+          <view class="content" data-index="{{index}}" bind:tap="showDetail">
+            <view class="content-icon iconfont icon-{{item.isStation ? 'station' : 'busline'}}"></view>
+            <view class="content-name">{{item.name}}</view>
+          </view>
+          <view class="delete" data-index="{{index}}" bind:tap="deleteItem">
+            <view class="delete-icon iconfont icon-delete"></view>
+          </view>
+        </view>
+      </view>
+      <view class="clear" bind:tap="clearRecently">清空使用记录</view>
+    </block>
+    <view class="no-recently" wx:else>还没有任何使用记录哦</view>
+  </view>
+  <!-- 天气部分 -->
+  <view class='weather-container' wx:if="{{daily_forecast}}" >
+    <view class="flex-wrp" style="display:flex;flex-direction:row;">
+    <view class="flex-item live_data">
+      <view class="nowWeather">
+        <view class="date">{{date}}</view>
+        <view class="temp w b">{{tmp}}°C</view>
+        <view class="weather w">{{txt}} | {{qlty}}</view>
+      </view>
+    
+      <view class="weahterDetail">
+        <view class="">
+          <view class="w center">{{dir}}</view>
+          <view wx:if="{{sc == '微风'}}" class="w b center f50">微风</view>
+          <view wx:else class="w b center f50">{{sc}}级</view>
+        </view>
+        <view class="l"></view>
+        <view class="">
+          <view class="w center">湿度</view>
+          <view class="w b center f50">{{hum}}%</view>
+        </view>
+        <view class="l"></view>
+        <view class="">
+          <view class="w center">体感温度</view>
+          <view class="w b center f50">{{fl}}°C</view>
+        </view>
+      </view>
+    </view>
+    <block wx:for="{{daily_forecast}}" wx:key="index" wx:for-item="item">
+      <view class="flex-item daily_forecast" style="display:flex;flex-direction:column;">
+        <view class="flex-item text-d">{{day[index]}}</view>
+          <view class="flex-item text">{{item.cond.txt_d}}</view>
+          <view class="flex-item text">{{item.wind.dir}}</view>
+          <view class="flex-item text">{{item.tmp.min}}~{{item.tmp.max}}°C</view>
+      </view>
+    </block>
+  </view>
+  </view>
+
+<!-- </view> -->

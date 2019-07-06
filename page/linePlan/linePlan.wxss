@@ -1,0 +1,170 @@
+.main {
+  /* margin-top: 10px; */
+  padding: 10px 35rpx;
+  background-color: #fff;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height: 60px;
+}
+
+.location {
+  flex-grow: 1;
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.icon {
+  padding: 3px 0;
+}
+
+.icon view:first-child {
+  color: #4fb80d;
+}
+
+.icon view:last-child {
+  color: #ff5a00;
+}
+
+.value {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.input-placeholder {
+  color: #aaa;
+}
+
+.line {
+  height: 1px;
+  background-color: #eaeaea;
+}
+
+.switch {
+  align-self: center;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 26px;
+  color: #0082dc;
+  transform: rotate(90deg);
+}
+
+.button {
+  border-top: 1px solid #eaeaea;
+}
+
+.center {
+  margin: 10px auto 0;
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #0082dc;
+  border-radius: 4px;
+}
+
+
+
+/* 弹窗 */
+.show-btn {
+  color: #888;
+  background-color: #fff;
+  padding: 2px 20px;
+  height: 26px;
+  font-size:12px;
+  text-align:center;
+  vertical-align:middle ;
+  line-height:22px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom:0;
+  z-index: 9999;
+  background: #f9f9f9;
+  /* margin: -180rpx 105rpx; */
+  /* border-radius: 36rpx; */
+}
+
+.modal-title {
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content-item {
+  border-top: 1px solid #dedede;
+  height: 20px;
+  padding: 8px 35rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-content-item-click {
+  color:  #feb70f;
+}
+
+.modal-content {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color:  #feb70f;
+  text-align: center;
+}

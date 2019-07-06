@@ -1,0 +1,8 @@
+<!--page/subwaymap/subwaymap.wxml-->
+ <movable-area style="height: 2000px; width: 2000px; " scale-area>
+    <movable-view style="height: 2000px; width: 2000px; " direction="all" bindchange="onChange" bindscale="onScale" scale='true' scale-min="0.5" scale-max="4" scale-value="2" >
+    <canvas canvas-id="myCanvas" style='width:2000px; height:2000px;'/> 
+    </movable-view>
+  </movable-area>
+  
+

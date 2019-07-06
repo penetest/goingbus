@@ -1,0 +1,50 @@
+<view class="main">
+  <view class="input-box">
+    <view class="location">
+      <view class="icon">
+        <view class="iconfont icon-circle"></view>
+        <view class="iconfont icon-circle"></view>
+      </view>
+      <view class="value">
+        <input disabled="{{true}}" placeholder="输入起点" value="{{start}}" bind:tap="getStartLocation"></input>
+        <view class="line"></view>
+        <input disabled="{{true}}" placeholder="输入终点" value="{{terminal}}" bind:tap="getTerminalLocation"></input>
+      </view>
+    </view>
+    <view class="switch iconfont icon-arrow-y" bind:tap="switchStartTerminal"></view>
+  </view>
+  <button class="show-btn" bindtap="showDialogBtn">
+    <view>{{travelModel}}</view>
+    <view class="iconfont icon-{{ showModal ? 'jiantoushang' : 'jiantouxia'}}"></view>
+  </button>
+  <view class="button">
+    <view class="center" bind:tap="getLinePlan">开始规划</view>
+  </view>
+</view>
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">出行方式</view>
+  <view class="modal-content">
+    <view class="modal-content-item {{ travelId == 4 ? modal-content-item-click : '' }}" data-no='4' data-name ="最佳路线" bindtap="chooseway"> 
+      <view> 最佳路线 </view>
+      <icon wx:if="{{travelId == 4}}" type="success" color='#feb70f'/>
+    </view>
+    <view class="modal-content-item {{ travelId == 0 ? modal-content-item-click : '' }}" data-no='0' data-name ="时间短" bindtap="chooseway"> 
+      <view> 时间短 </view>
+      <icon wx:if="{{travelId == 0}}" type="success" color='#feb70f'/>
+    </view>
+    <view class="modal-content-item {{ travelId == 2 ? modal-content-item-click : '' }}" data-no='2' data-name ="少换乘" bindtap="chooseway"> 
+      <view> 少换乘 </view>
+      <icon wx:if="{{travelId == 2}}" type="success" color='#feb70f'/>
+    </view>
+    <view class="modal-content-item {{ travelId == 1 ? modal-content-item-click : '' }}" data-no='1' data-name ="少步行" bindtap="chooseway"> 
+      <view> 少步行 </view>
+      <icon wx:if="{{travelId == 1}}" type="success" color='#feb70f'/>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

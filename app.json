@@ -1,0 +1,66 @@
+{
+  "debug": true,
+  "pages": [
+    "page/index/index",
+    "page/search/search",
+    "page/line/line",
+    "page/lineList/lineList",
+    "page/nearby/nearby",
+    "page/me/me",
+    "page/auth/auth",
+    "page/linePlan/linePlan",
+    "page/linePlanResult/linePlanResult",
+    "page/detailTransition/detailTransition",
+    "page/line/linemap/linemap",
+    "page/line/arriveAlarm/arrivealarm",
+    "page/line/sameBusLine/sameBusLine",
+    "page/line/onbus/onbus",
+    "page/subwaymap/subwaymap"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#feb70f",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#efefef",
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "上车走了"
+  },
+  "tabBar": {
+    "color": "#878787",
+    "selectedColor": "#000",
+    "borderStyle": "black",
+    "backgroundColor": "#fcfcfc",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "iconPath": "imgs/tabBar/home_2.png",
+        "selectedIconPath": "imgs/tabBar/home_1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/linePlan/linePlan",
+        "text": "路线规划",
+        "iconPath": "imgs/lineplan/lineplan.png",
+        "selectedIconPath": "imgs/lineplan/lineplan-selected.png"
+      },
+      {
+        "pagePath": "page/nearby/nearby",
+        "iconPath": "imgs/tabBar/location2.png",
+        "selectedIconPath": "imgs/tabBar/location1.png",
+        "text": "附近"
+      },
+      {
+        "pagePath": "page/me/me",
+        "iconPath": "imgs/tabBar/mine_2.png",
+        "selectedIconPath": "imgs/tabBar/mine_1.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

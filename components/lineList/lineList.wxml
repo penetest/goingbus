@@ -1,0 +1,21 @@
+<view wx:if="{{isShowMap}}" class="map_box">
+  <map id="navi_map" longitude="{{longitude}}" latitude="{{latitude}}" scale="12" show-location="{{show_location}}" include-points="{{include_points}}" markers="{{markers}}" polyline="{{polyline}}" >
+  </map>
+</view>
+
+<view class="line-list" wx:if="{{lineList.length}}">
+  <view class="item" wx:for="{{lineList}}" wx:key="{{index}}">
+    <view class="intro" data-index="{{index}}" bind:tap="showLineDetail">
+      <view class="name">{{item.name}}</view>
+      <view class="start-terminal">
+        <view>{{item.starting_station}}</view>
+        <image class="arrow" src="/imgs/lineplan/arrow.png"></image>
+        <view>{{item.terminal_station}}</view>
+      </view>
+    </view>
+    <view class="price" wx:if="{{showPrice}}">票价{{item.price}}-{{item.toltal_price}}元</view>
+    <view class="collected" wx:else data-index="{{index}}" bind:tap="cancleCollection">
+      <image class="start" src="/imgs/lineplan/start.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="container">
+	<view class="header">
+		<view class="search">
+			<image class="icon" src="/imgs/index/icon_search.png"/>
+			<input bindinput="getSug" placeholder="{{placeholder}}" auto-focus/>
+		</view>
+	</view>
+	
+  <scroll-view scroll-y="true" class="transit-sug-list">
+    <view wx:for="{{suggests}}" wx:key="{{index}}" class="transit-list-item">
+     <view bindtap="showDetail" data-line_id="{{item.data.line_id}}" data-name="{{item.data.name}}">
+      <view wx:if="{{item.type=== 'line'}}" class="transit-list-item-inner">
+          <!-- <view class="transit-sug-icon">
+            <image class="sug-line-icon" src='/imgs/index/search_location.png'></image>
+          </view> -->
+          <view class="icon iconfont icon-busline" style='font-size:25px; margin: 15px 10px;'></view>
+          <view class="transit-sug-text">
+            <view class="transit-sugitem-name">{{item.data.name}}</view>
+            <view class="transit-sugitem-desc">{{item.data.direction}}</view>
+          </view>
+      </view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

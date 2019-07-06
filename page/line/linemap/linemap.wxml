@@ -1,0 +1,5 @@
+<!--page/line/linemap/linemap.wxml-->
+<view class="map_box">
+  <map id="navi_map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" show-location="{{show_location}}" include-points="{{include_points}}" markers="{{markers}}" polyline="{{polyline}}"  bindregionchange="regionchange">
+  </map>
+</view>

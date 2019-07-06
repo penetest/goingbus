@@ -1,0 +1,17 @@
+/* page/auth/auth.wxss */
+page {
+	height: 100%;
+}
+
+.contain{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authbtn{
+  background-color:  #feb70f;
+  width: 50%;
+}

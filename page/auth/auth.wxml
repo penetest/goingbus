@@ -1,0 +1,4 @@
+<!--page/auth/auth.wxml-->
+<view class='contain'>
+    <button class='authbtn' open-type="openSetting">设置授权</button>
+</view>

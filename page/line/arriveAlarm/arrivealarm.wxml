@@ -1,0 +1,50 @@
+<!--page/line/arriveAlarm/arrivealarm.wxml-->
+<view class="line-header">
+      <view class="line-title">
+          <view class="line-stop-area">
+              <text class="line-stopname">
+                  {{stopname}}
+              </text>
+          </view>
+          <view class="line-name-area">
+          <view class="line-name">
+                  {{linename}}
+              </view>
+            <view class="line-from">
+                  {{starting_station}} -> 
+              </view>
+              <view class="line-to">
+                  {{terminal_station}}
+              </view>
+          </view>
+      </view>
+  </view>
+<view class='line-time-area'>
+  <view class="section">
+    <view class="section__title">提醒时间设置</view>
+      <picker class='section__content' mode="time" value="{{starttime}}" start="{{first_time}}" end="{{last_time}}" bindchange="bindStartTimeChange">
+      <view class='label-name'>开始时间: </view>
+          <view class="picker">
+            {{starttime}}
+          </view>
+          <view class=' iconfont icon-jiantouyou'></view>
+      </picker>
+      <picker class='section__content' mode="time" value="{{endtime}}" start="{{first_time}}" end="{{last_time}}"  bindchange="bindEndTimeChange">
+      <view class='label-name'>结束时间: </view>
+          <view class="picker">
+            {{endtime}}
+          </view>
+          <view class=' iconfont icon-jiantouyou'></view>
+      </picker>   
+  </view>    
+  <view class="section">
+    <view class="section__title">提醒方式设置</view>
+      <picker class='section__content' bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class='label-name'>提醒方式:</view>
+          <view class="picker">
+              {{array[index]}} 
+          </view>
+          <view class=' iconfont icon-jiantouyou'></view>
+      </picker>
+  </view>    
+</view>
